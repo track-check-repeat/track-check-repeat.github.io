@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Track, Check, Repeat: An EM Approach to Unsupervised Tracking</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      html,body,h1,h2,h3,h4,h5,h6 {font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;}
+      <!-- .cite { background:#f0f0f0; padding:10px; font-size:18px} -->
+      .cite { padding:0px; background:#ffffff; font-size:18px}
+      .card {border: 1px solid #ccc}
+      img { margin-bottom:-6px;}
+      p { font-size:18px;}
+      a {text-decoration: none; color: #2196F3;}
+      .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+      box-shadow:
+      0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+      5px 5px 0 0px #fff, /* The second layer */
+      5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+      10px 10px 0 0px #fff, /* The third layer */
+      10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+      15px 15px 0 0px #fff, /* The fourth layer */
+      15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+      20px 20px 0 0px #fff, /* The fifth layer */
+      20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+      25px 25px 0 0px #fff, /* The fifth layer */
+      25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+      margin-left: 10px;
+      margin-right: 60px;
+      }
+    </style>
+  </head>  
+  <body class="w3-white">
+    <!-- Page Container -->
+    <div class="w3-content w3-margin-top w3-margin-bottom" style="max-width:960px;">
+
+      <!-- The Grid -->
+      <div class="w3-row-padding">
+
+	<!-- paper container -->	  
+	<div class="w3-display-container w3-row w3-white w3-margin-bottom">
+	  <div class="w3-center">
+	    <h1>Track, Check, Repeat: <br \>An EM Approach to Unsupervised Tracking</h1>
+	    <h5><a href="https://cs.cmu.edu/~aharley/">Adam W. Harley</a> &emsp;&emsp; <a href="https://zuoym15.github.io/">Yiming Zuo</a> &emsp;&emsp; <a href="https://wenj.github.io/">Jing Wen</a> &emsp;&emsp; Ayush Mangal</h5>
+	    <h5>Shubhankar Potdar &emsp;&emsp; Ritwick Chaudhry &emsp;&emsp; <a href="https://www.cs.cmu.edu/~katef/">Katerina Fragkiadaki</a><h5>
+		<h5><em>CVPR 2021</em></h5>
+	  </div>
+	  <div class="w3-center">
+	    <h3>[<a href="https://github.com/aharley/track_check_repeat">Code</a>] &emsp; [<a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Harley_Track_Check_Repeat_An_EM_Approach_to_Unsupervised_Tracking_CVPR_2021_paper.pdf">Paper</a>]</h3>
+	  </div>
+	  <hr>
+	  <div class="w3-display-container w3-row w3-white w3-margin-bottom w3-center">
+	    <img src="images/fig1.png" style="width:100%">
+	  </div>
+	  <hr>
+	  <div class="w3-center">
+	    <h2>Abstract</h2>
+	  </div>
+	  <p>We propose an unsupervised method for detecting and tracking moving objects in 3D, in unlabelled RGB-D videos. The method begins with classic handcrafted techniques for segmenting objects using motion cues: we estimate optical flow and camera motion, and conservatively segment regions that appear to be moving independently of the background. Treating these initial segments as pseudo-labels, we learn an ensemble of appearance-based 2D and 3D detectors, under heavy data augmentation. We use this ensemble to detect new instances of the "moving" type, even if they are not moving, and add these as new pseudo-labels. Our method is an expectation-maximization algorithm, where in the expectation step we fire all modules and look for agreement among them, and in the maximization step we re-train the modules to improve this agreement. The constraint of ensemble agreement helps combat contamination of the generated pseudo-labels (during the E step), and data augmentation helps the modules generalize to yet-unlabelled data (during the M step). We compare against existing unsupervised object discovery and tracking methods, using challenging videos from CATER and KITTI, and show strong improvements over the state-of-the-art.</p>
+	  <hr>
+
+	  <div class="w3-center">
+	    <h2>Video</h2>
+	  </div>
+	  <div class="w3-display-container w3-row w3-white w3-margin-bottom w3-center">
+	    <iframe width="800" height="600" src="https://www.youtube.com/embed/Jg2f5fkgxZo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	  </div>
+	  <hr>
+
+	  <div class="w3-row w3-margin" style="padding-bottom:2em">
+	    <div class="w3-center"><h2>Paper</h2></div>
+	    <div class="w3-col s0 m1 l2" style="height:10px"></div>
+	    <div class="w3-col s6 m3 l2">
+	      <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Harley_Track_Check_Repeat_An_EM_Approach_to_Unsupervised_Tracking_CVPR_2021_paper.pdf"><img class="layered-paper-big" src="images/page1.png" style="width:100%;min-height:200px; margin-right:3em"></a>
+	    </div>
+	    <div class="w3-col s6 m7 l6" style="padding-left:5em">
+	      <div class="cite">
+		Adam W. Harley, Yiming Zuo, Jing Wen, Ayush Mangal, Shubhankar Potdar, Ritwick Chaudhry, Katerina Fragkiadaki. 
+		<i>Track, Check, Repeat: An EM Approach to Unsupervised Tracking.</i> 
+		CVPR 2021.
+	      </div>
+	      <h3><a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Harley_Track_Check_Repeat_An_EM_Approach_to_Unsupervised_Tracking_CVPR_2021_paper.pdf">[pdf]</a>&emsp;<a href="bib.txt">[bibtex]</a></h3>
+	    </div>
+	    <div class="w3-col s0 m1 l2" style="height:10px"></div>
+	  </div>
+	  <hr>
+	  
+	  <!-- end paper container -->
+
+	</div><!-- End Grid -->
+      </div><!-- End Page Container -->
+
+  </body>
+</html>
